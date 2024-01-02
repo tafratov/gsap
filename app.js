@@ -1,3 +1,5 @@
 let firstName = 'Artem'
-firstName = 'Ivan'
-console.log('Hello', firstName);
+age = '31'
+city = 'Moscow'
+hobby = 'Fragrances, fashion & music'
+console.log('Hello', firstName)
