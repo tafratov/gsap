@@ -4,3 +4,5 @@ let screenPrice = 800
 let percentage = 20
 let fullPrice = 400
 let responsive = true
+
+console.log(titleProject);
