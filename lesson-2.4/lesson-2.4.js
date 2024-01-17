@@ -23,11 +23,11 @@ let servicePrice2 = +prompt('Сколько будет стоить этот в�
 let responsive = prompt('Нужен ли респонсивный сайт?', 'Да')
 let fullPrice = screenPrice + servicePrice1 + servicePrice2
 
-if (50000 => fullPrice) {
+if (fullPrice >= 50000) {
     console.log('делаем скидку в 10%');
-} else if (20000 <= fullPrice <= 40000) {
+} else if (fullPrice >= 20000 && fullPrice <= 40000) {
     console.log('сделаем скидку 5%');
-} else if (0 <= fullPrice <= 20000) {
+} else if (fullPrice >= 0 && fullPrice <= 20000) {
     console.log('скидка не предусмотрена');
 } else (fullPrice < 0) {
     console.log('Что то пошло не так');
