@@ -3,7 +3,7 @@
 // let screenPrice = 800
 // let percentage = 20
 // let fullPrice = 400
-// let responsive = true
+let responsive = true
 
 let titleProject = prompt('Название проекта?', 'Webflow+jsap')
 let screenPrice = 10000
