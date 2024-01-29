@@ -38,3 +38,18 @@ if (fullPrice >= 40000) {
 } else {
     console.log('Что то пошло не так');
 }
+
+
+let getAllServicePrices = function (servicePrice1, servicePrice2) {
+    return servicePrice1 + servicePrice2;
+};
+
+let allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
+console.log(allServicePrices);
+
+function getFullPrice() {
+    return allServicePrices + screenPrice;
+}
+
+let fullProjectPrice = getFullPrice();
+console.log(fullProjectPrice);
