@@ -25,21 +25,6 @@ console.log('Цена за второй сервис:', servicePrice2);
 let fullPrice = screenPrice + servicePrice1 + servicePrice2
 console.log('Общая цена:', fullPrice);
 
-let servicePercentPrice = fullPrice * (100 - percent) / 100;
-servicePercentPrice = Math.round(servicePercentPrice * 100) / 100;
-console.log('Сумма,с учетом вычета процента подрядчику:', servicePercentPrice);
-
-if (fullPrice >= 40000) {
-    console.log('делаем скидку в 10%');
-} else if (fullPrice >= 20000 && fullPrice <= 40000) {
-    console.log('сделаем скидку 5%');
-} else if (fullPrice >= 0 && fullPrice <= 20000) {
-    console.log('скидка не предусмотрена');
-} else {
-    console.log('Что то пошло не так');
-}
-
-
 let getAllServicePrices = function (servicePrice1, servicePrice2) {
     return servicePrice1 + servicePrice2;
 };
@@ -61,3 +46,22 @@ function getTitle(title) {
 
 titleProject = getTitle(titleProject);
 console.log(titleProject);
+
+
+function getServicePercentPrices() {
+    fullPrice * (100 - percent) / 100;
+    servicePercentPrice = Math.round(servicePercentPrice * 100) / 100;
+    console.log('Сумма,с учетом вычета процента подрядчику:', servicePercentPrice);
+}
+
+function getRollbackMessage() {
+    if (fullPrice >= 40000) {
+        console.log('делаем скидку в 10%');
+    } else if (fullPrice >= 20000 && fullPrice <= 40000) {
+        console.log('сделаем скидку 5%');
+    } else if (fullPrice >= 0 && fullPrice <= 20000) {
+        console.log('скидка не предусмотрена');
+    } else {
+        console.log('Что то пошло не так');
+    }
+}
