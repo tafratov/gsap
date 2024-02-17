@@ -54,5 +54,6 @@ console.log('Цена за первый сервис:', servicePrice1);
 console.log('Второй сервис:', service2);
 console.log('Цена за второй сервис:', servicePrice2);
 console.log('Цена за сервисы:', allServicePrices);
-console.log(getRollbackMessage());
+console.log('Сумма после вычета процента подрядчику:', servicePercentPrice);
 console.log('Общая цена:', fullPrice);
+console.log(getRollbackMessage());
