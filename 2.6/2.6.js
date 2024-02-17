@@ -5,8 +5,8 @@ let newTitle = '';
 let titleProject;
 let screensValue;
 let responsive;
-let service1;
-let service2;
+
+
 
 
 const checkIsNumber = function (number) {
@@ -21,12 +21,14 @@ const getAllServicePrices = function () {
 
     screenPrice = prompt('Сколько это будет стоить?', 12000)
 
-    while !checkIsNumber(screenPrice) || screenPrice.trim() || screenPrice === null {
+    while ((!checkIsNumber(screenPrice) || screenPrice.trim() === '' || screenPrice === null)) {
+
         screenPrice = prompt('Сколько это будет стоить?', 12000)
     }
 
     screenPrice = Number(screenPrice)
 }
+
 
 
 let service1 = prompt('Какой сервис нужен?')
@@ -59,17 +61,6 @@ function getTitle(title) {
 
 titleProject = getTitle(titleProject);
 
-/*function getRollbackMessage() {
-    if (fullPrice >= 40000) {
-        return 'Делаем скидку в 10%'
-    } else if (fullPrice >= 20000 && fullPrice <= 40000) {
-        return 'Сделаем скидку 5%'
-    } else if (fullPrice >= 0 && fullPrice <= 20000) {
-        return 'Скидка не предусмотрена'
-    } else {
-        return 'Что то пошло не так';
-    }
-} */
 
 const getPercentageMessage (price){
     if (fullPrice >= 40000) {
