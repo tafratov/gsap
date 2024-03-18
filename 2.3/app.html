@@ -13,3 +13,180 @@
 </body>
 
 </html>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nextBtn  = document.querySelector('.w-pagination-next')  
+      const windowWidth = window.innerWidth;
+      let popUps = document.querySelectorAll(".popup-resale");
+      if (windowWidth > 991) {
+        nextBtn.addEventListener('click',()=>{
+            setTimeout(()=>{
+                popUps = document.querySelectorAll(".popup-resale");
+                popUps.forEach((wrap) => {
+                    const bigImg = wrap.querySelector(".img-popup-big");
+                    const smallImgs = wrap.querySelectorAll(".img-popup-small");
+                    smallImgs.forEach((img) => {
+                      img.addEventListener("click", () => {
+                        bigImg.src = img.src;
+                      });
+                    });
+                  });
+            },500)
+           
+        })
+        popUps.forEach((wrap) => {
+          const bigImg = wrap.querySelector(".img-popup-big");
+          const smallImgs = wrap.querySelectorAll(".img-popup-small");
+          smallImgs.forEach((img) => {
+            img.addEventListener("click", () => {
+              bigImg.src = img.src;
+            });
+          });
+        });
+      }
+    });
+    </script>
+    
+    
+    <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      let cards = document.querySelectorAll(".box-text-cart-projects");
+      const ref = popWrap.querySelector("#ref_number");
+
+    
+      let cardId = ''
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          const bigImg = card.querySelector(".main-image-card");
+          const smallImgs = card.querySelectorAll("img.image");
+          const cardTitle = card.querySelector(".subtitle-1");
+          const carLoc = card.querySelector(".location");
+          const cardBed = card.querySelector(".bedrooms");
+          const cardBath = card.querySelector(".bathrooms");
+          const cardPrice = card.querySelector(".price_popup");
+          const cardStatus = card.querySelector(".status");
+          cardId = card.id
+          ref.innerHTML = cardId;
+      
+          popBigImg.src = bigImg.src;
+          title.innerHTML = cardTitle.textContent;
+          price.innerHTML = cardPrice.textContent;
+          loc.innerHTML = carLoc.textContent;
+          bed.innerHTML = cardBed.textContent;
+          bath.innerHTML = cardBath.textContent;
+          if(cardStatus){
+            status.innerHTML = cardStatus.textContent;
+          }else{
+            status.innerHTML = '';
+          }
+          inputs.forEach(input=>{
+              input.addEventListener('focus',()=>{
+              const propertyRef = popWrap.querySelector('input[name="Property_Ref_No"]');
+      
+              if (!propertyRef){
+                  form.insertAdjacentHTML('afterbegin',`
+                  <input type="hidden" name="Property_Ref_No" value="${cardId}">
+                  `)
+              }else{
+                  propertyRef.value = cardId;
+              }   
+          
+              })
+          })
+          for (let i = 0; i < smallImgs.length; i++) {
+            popSmallImgs[i].src = smallImgs[i].src;
+          }
+        });
+      });
+      nextBtn.addEventListener('click',()=>{
+          setInterval(()=>{
+              cards = document.querySelectorAll(".card-resale");
+              cards.forEach((card) => {
+                  card.addEventListener("click", () => {
+                    const bigImg = card.querySelector(".main-image-card");
+                    const smallImgs = card.querySelectorAll("img.image");
+                    const cardTitle = card.querySelector(".subtitle-1");
+                    const carLoc = card.querySelector(".location");
+                    const cardBed = card.querySelector(".bedrooms");
+                    const cardBath = card.querySelector(".bathrooms");
+                    const cardPrice = card.querySelector(".price_popup");
+                    const cardStatus = card.querySelector(".status");
+                    if(cardStatus){
+                      status.innerHTML = cardStatus.textContent;
+                    }else{
+                      status.innerHTML = '';
+                    }
+                    cardId = card.id
+                    ref.innerHTML = cardId;
+                    popBigImg.src = bigImg.src;
+                    title.innerHTML = cardTitle.textContent;
+                    price.innerHTML = cardPrice.textContent;
+                    loc.innerHTML = carLoc.textContent;
+                    bed.innerHTML = cardBed.textContent;
+                    bath.innerHTML = cardBath.textContent;
+                    inputs.forEach(input=>{
+                        input.addEventListener('focus',()=>{
+                        const propertyRef = popWrap.querySelector('input[name="Property_Ref_No"]');
+                
+                        if (!propertyRef){
+                            form.insertAdjacentHTML('afterbegin',`
+                            <input type="hidden" name="Property_Ref_No" value="${cardId}">
+                            `)
+                        }else{
+                          propertyRef.value = cardId;
+                        }   
+                    
+                        })
+                    })
+                    for (let i = 0; i < smallImgs.length; i++) {
+                      popSmallImgs[i].src = smallImgs[i].src;
+                    }
+                  });
+                });
+    
+          },500)
+       
+      })
+      
+      
+    })
+    </script>
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const popUps = document.querySelectorAll(".popup-resale");
+
+  popUps.forEach((popup) => {
+    const boxes = popup.querySelectorAll(".box-text-cart-projects");
+    const form = popup.querySelector(".form-for-ref_no");
+    const ref = form.querySelector("#ref_number");
+    const inputs = form.querySelectorAll('input');
+
+    boxes.forEach((box) => {
+      box.addEventListener("click", () => {
+        const boxId = box.id;
+        ref.innerHTML = boxId;
+        inputs.forEach(input => {
+          input.addEventListener('focus', () => {
+            const propertyRef = form.querySelector('input[name="ref_number"]');
+            if (!propertyRef) {
+              form.insertAdjacentHTML('afterbegin', `
+                <input type="hidden" name="ref_number" value="${boxId}">
+              `);
+            } else {
+              propertyRef.value = boxId;
+            }
+          });
+        });
+      });
+    });
+  });
+});
+</script>
