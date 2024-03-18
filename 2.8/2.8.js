@@ -6,11 +6,12 @@ const box = document.querySelector(".box")
 
 
 heading.addEventListener('click', () => {
-    console.log("cliced");
+    console.log("cliced h1");
     heading.classList.toggle('is--active')
 })
 
 bodyText.addEventListener('click', () => {
+    console.log("cliced text");
     bodyText.classList.toggle('is--active_text')
 })
 
